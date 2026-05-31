@@ -19,7 +19,7 @@ export default function WaitlistCTA() {
 
       <div
         ref={ref}
-        className={`max-w-2xl mx-auto text-center relative z-10 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+        className={`flex flex-col items-center justify-center max-w-2xl mx-auto text-center relative z-10 transition-all duration-700 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
       >
         {/* Tag */}
         <div className="flex flex-col items-center justify-center gap-5 mb-5">

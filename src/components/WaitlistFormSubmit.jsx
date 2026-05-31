@@ -30,7 +30,7 @@ export default function WaitlistFormSubmit() {
     }
 
     return (
-        <div className="w-full max-w-md mx-auto">
+        <div className="w-full max-w-md">
             {status === 'success' ? (
                 <div className="text-center py-4 px-6 rounded-2xl bg-[#F00B51]/10 border border-[#F00B51]/20">
                     <p className="font-heading gradient-text text-lg">You're on the list! 🎉</p>
@@ -44,14 +44,14 @@ export default function WaitlistFormSubmit() {
                         placeholder="your@email.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="flex-1 px-5 py-3 rounded-2xl border border-[#111]/10 bg-white font-body text-sm text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#F00B51]/40 transition-all"
+                        className="flex-1 w-     px-5 py-3 rounded-2xl border border-[#111]/10 bg-white font-body text-sm text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#F00B51]/40 transition-all"
                     />
                     <button
                         type="submit"
                         disabled={status === 'loading'}
-                        className="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#F00B51] to-[#730062] text-white font-heading text-sm tracking-wide uppercase transition-all hover:opacity-90 active:scale-95 disabled:opacity-60"
+                        className="px-6 py-3 rounded-2xl bg-gradient-to-r from-[#F00B51] to-[#730062] text-white font-body text-sm tracking-wide transition-all hover:opacity-90 active:scale-95 disabled:opacity-60"
                     >
-                        {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
+                        {status === 'loading' ? 'Joining...' : 'Join Waitlist →'}
                     </button>
                 </form>
             )}
