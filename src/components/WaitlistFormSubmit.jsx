@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function WaitlistForm() {
+export default function WaitlistFormSubmit() {
     const [email, setEmail] = useState('')
     const [status, setStatus] = useState('idle') // idle | loading | success | error
     const [errorMsg, setErrorMsg] = useState('')

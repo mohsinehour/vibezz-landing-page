@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useInView } from '../hooks/useInView'
-import WaitlistForm from './WaitlistForm'
+import WaitlistFormSubmit from './WaitlistFormSubmit'
 
 export default function WaitlistCTA() {
   const { ref, inView } = useInView({ threshold: 0.15 })

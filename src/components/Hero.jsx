@@ -1,45 +1,5 @@
 import { useState } from 'react'
 import { useInView } from '../hooks/useInView'
-import WaitlistForm from './WaitlistForm'
-
-function WaitlistForm({ id = 'hero-form' }) {
-  const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (email) setSubmitted(true)
-  }
-
-  if (submitted) {
-    return (
-      <div className="flex items-center gap-2 text-[#F00B51] font-body font-semibold animate-bounce">
-        <span>🎉</span>
-        <span>You're on the list! We'll be in touch.</span>
-      </div>
-    )
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
-      <input
-        id={`${id}-email`}
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="your@email.com"
-        required
-        className="flex-1 px-4 py-3 rounded-full border border-[#111111]/15 bg-white font-body text-sm text-[#111111] placeholder-[#aaa] outline-none focus:border-[#F00B51] focus:ring-2 focus:ring-[#F00B51]/20 transition-all duration-200"
-      />
-      <button
-        type="submit"
-        className="gradient-bg text-white font-body font-semibold text-sm px-6 py-3 rounded-full hover:opacity-90 hover:shadow-lg hover:shadow-pink-200 transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap"
-      >
-        Join Waitlist →
-      </button>
-    </form>
-  )
-}
 
 export default function Hero() {
   const { ref, inView } = useInView({ threshold: 0.1 })
@@ -104,6 +64,45 @@ export default function Hero() {
         </div>
       </div>
     </section>
+  )
+}
+
+function WaitlistForm({ id = 'hero-form' }) {
+  const [email, setEmail] = useState('')
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (email) setSubmitted(true)
+  }
+
+  if (submitted) {
+    return (
+      <div className="flex items-center gap-2 text-[#F00B51] font-body font-semibold animate-bounce">
+        <span>🎉</span>
+        <span>You're on the list! We'll be in touch.</span>
+      </div>
+    )
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+      <input
+        id={`${id}-email`}
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="your@email.com"
+        required
+        className="flex-1 px-4 py-3 rounded-full border border-[#111111]/15 bg-white font-body text-sm text-[#111111] placeholder-[#aaa] outline-none focus:border-[#F00B51] focus:ring-2 focus:ring-[#F00B51]/20 transition-all duration-200"
+      />
+      <button
+        type="submit"
+        className="gradient-bg text-white font-body font-semibold text-sm px-6 py-3 rounded-full hover:opacity-90 hover:shadow-lg hover:shadow-pink-200 transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap"
+      >
+        Join Waitlist →
+      </button>
+    </form>
   )
 }
 
