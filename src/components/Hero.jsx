@@ -8,7 +8,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={ref}
-      className="relative min-h-screen flex items-center overflow-hidden pt-12"
+      className="relative min-h-screen lg:h-[800px] flex items-center overflow-hidden pt-12"
     >
       {/* Fade in from top */}
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#FAF2E8] to-transparent pointer-events-none z-10" />
@@ -50,14 +50,14 @@ export default function Hero() {
         </div>
 
         {/* Right: Hero image */}
-        <div className={`relative flex justify-center md:justify-end transition-all duration-700 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className={`relative flex py-0 md:py-40 justify-center md:justify-end transition-all duration-700 delay-300 ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <div className="relative">
             {/* Glow behind image */}
             <div className="absolute inset-0 gradient-bg rounded-3xl blur-2xl opacity-20 scale-110" />
             <img
               src="/assets/hero-img.png"
               alt="Vibezz app — the right song for every reel"
-              className="relative w-full max-w-sm md:max-w-md lg:max-w-lg"
+              className="relative w-full max-w-sm md:max-w-md lg:max-w-lg animate-float animate-duration-3000 animate-ease-in-out"
             />
           </div>
         </div>

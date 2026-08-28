@@ -13,6 +13,7 @@
     box-sizing: border-box;
   }
 
+
   html {
     scroll-behavior: smooth;
   }
@@ -27,11 +28,33 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Aldrich', sans-serif;
     color: #111111;
   }
 }
+
+@theme {
+  --animate-float: float 3s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
 
 @layer utilities {
   .gradient-text {
